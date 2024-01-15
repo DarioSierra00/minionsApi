@@ -4,7 +4,6 @@ import { IndexComponent } from './index/index.component';
 import { InfoMinionComponent } from './info-minion/info-minion.component';
 import { InfoMinionIdComponent } from './info-minion-id/info-minion-id.component';
 import { FormularioMinionComponent } from './formulario-minion/formulario-minion.component';
-import { EditMinionComponent } from './edit-minion/edit-minion.component';
 
 export const routes: Routes = [
     {path : "minions", component : MinionsComponent},
@@ -12,5 +11,5 @@ export const routes: Routes = [
     {path : "infoMinion/:name",component : InfoMinionComponent},
     {path : "infoMinionId/:id",component : InfoMinionIdComponent},
     {path : "addMinion",component : FormularioMinionComponent},
-    {path : "editMinion/:id",component : EditMinionComponent}
+    {path : "addMinion/:id",component : FormularioMinionComponent},
 ];

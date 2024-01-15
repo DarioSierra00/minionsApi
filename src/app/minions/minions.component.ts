@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Minion } from '../interfaces/minion';
 import { MinionsService } from '../services/minions.service';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -11,7 +11,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './minions.component.css'
 })
 export class MinionsComponent implements OnInit{
-
+  @Input() id : string = ""
   minions! : Minion[];
 
   constructor(private minionService : MinionsService){}
@@ -22,5 +22,11 @@ export class MinionsComponent implements OnInit{
     })
   }
 
+  delete(idMin : number){
+    this.minionService.deleteMinion(idMin).subscribe({
+      next : () => this.minions = this.minions.filter((minion) => minion.id !== idMin)
+    })
+    
+  }
   
 }

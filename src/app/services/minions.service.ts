@@ -31,4 +31,8 @@ export class MinionsService {
   editMinion(id : string ,minion : Omit<Minion, "id">) : Observable<Minion>{
     return this.http.put<Minion>(this.url+"/"+id, minion)
   }
+
+  deleteMinion(id : number) : Observable<Minion>{
+    return this.http.delete<Minion>(this.url+"/"+id)
+  }
 }
