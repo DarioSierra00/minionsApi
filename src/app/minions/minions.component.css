@@ -1,4 +1,36 @@
-.container {
-    display: grid;
+h1{
+    display: flex;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; 
+    margin-top: 5px; 
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    height: 670px;
+}
+
+.buenoMalo{
+    width: 50px;
+}
+
+.divBueno{
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-items: flex-end;
+}
+
+.icon{
+    margin-left: 3%;
+}
+
+.heart{
+    cursor: pointer;
 }

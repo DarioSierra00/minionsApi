@@ -11,12 +11,12 @@ import { Minion } from '../interfaces/minion';
 })
 export class InfoMinionIdComponent implements OnChanges{
   @Input() id : string = ""
-  minions! : Minion[]
+  minion! : Minion
   constructor(private minionService : MinionsService){}
 
   ngOnChanges(): void {
     this.minionService.getMinionById(this.id).subscribe({
-      next : min => this.minions = min
+      next : min => this.minion = min
     })
   }
 }

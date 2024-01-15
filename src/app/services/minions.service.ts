@@ -20,7 +20,15 @@ export class MinionsService {
     return this.http.get<Minion[]>(this.url+ "?name="+name)
   }
 
-  getMinionById(id : string) : Observable<Minion[]>{
-    return this.http.get<Minion[]>(this.url+"?id="+id)
+  getMinionById(id : string) : Observable<Minion>{
+    return this.http.get<Minion>(this.url+"/"+id)
+  }
+
+  addMinion(minion : Omit<Minion,"id">) : Observable<Minion>{
+    return this.http.post<Minion>(this.url,minion)
+  }
+
+  editMinion(id : string ,minion : Omit<Minion, "id">) : Observable<Minion>{
+    return this.http.put<Minion>(this.url+"/"+id, minion)
   }
 }
