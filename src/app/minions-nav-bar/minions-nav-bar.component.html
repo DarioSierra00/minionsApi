@@ -1,21 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" routerLink="/index" routerLinkActive="active" ariaCurrentWhenActive="page">Minioland</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/minions" routerLinkActive="active" ariaCurrentWhenActive="page">Minions</a>
-          <a class="nav-link" routerLink="/addMinion" routerLinkActive="active" ariaCurrentWhenActive="page">Añadir minion</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0" (ngSubmit)="toGo()">
-        <input name="search" class="form-control mr-sm-2" type="text" #input placeholder="Search" [(ngModel)]="termino" aria-label="text">
-        <a [routerLink]="['/infoMinion',input.value]"><button type="submit">Search</button></a>
-      </form>
-    </div>
-  </nav>
+  <a class="navbar-brand" routerLink="/index" routerLinkActive="active" ariaCurrentWhenActive="page">Minioland</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/minions" routerLinkActive="active" ariaCurrentWhenActive="page">Minions</a>
+      </li>
+      <li> <a class="nav-link" routerLink="/addMinion" routerLinkActive="active" ariaCurrentWhenActive="page">Añadir minion</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input name="search" class="form-control mr-sm-2" type="text" #input placeholder="Search" [(ngModel)]="termino"
+        aria-label="text">
+      <a [routerLink]="['/infoMinion',input.value]"><button type="submit">Search</button></a>
+    </form>
+  </div>
+</nav>
